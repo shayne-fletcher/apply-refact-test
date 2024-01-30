@@ -12,5 +12,5 @@ jobs:
       matrix:
         os: [ubuntu, macos, windows]
     steps:
-      - run: cabal new-update
-      - run: cabal new-install apply-refact
+      - run: cabal v2-update
+      - run: cabal v2-install apply-refact
