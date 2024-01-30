@@ -13,4 +13,5 @@ jobs:
         os: [ubuntu, macos, windows]
     steps:
       - run: cabal update
+      - run: cabal install cabal-install
       - run: cabal install apply-refact
