@@ -1,0 +1,16 @@
+name: cabal-install
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  install:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu, macos, windows]
+    steps:
+      - run: cabal new-update
+      - run: cabal new-install apply-refact
